@@ -3,8 +3,27 @@
 # This config file will use environment variables such as $BROWSER and $TERMINAL.
 
 bar {
-        status_command i3status
-        }
+   	height 25
+	position bottom
+    font pango:OperatorMono Nerd Font 12
+	status_command i3status
+    tray_padding 1
+    strip_workspace_numbers yes
+
+    colors {
+            separator  #1f222d
+            background #1f222d
+            statusline #81a1c1
+
+            #                   border  background text
+            focused_workspace  #1f222d #1f222d    #81a1c1
+            active_workspace   #1f222d #252936    #5e81ac
+            inactive_workspace #1f222d #1f222d    #4c566a
+            urgent_workspace   #1f222d #1f222d    #ee829f
+            binding_mode       #1f222d #81a1c1    #2e3440
+                 }
+}
+
 
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -41,7 +60,7 @@ bindsym $mod+Escape	             exec --no-startup-id dm-tool switch-to-greeter
 bindsym $mod+Shift+Escape	       exec --no-startup-id $hibernate
 
 # bindsym $mod+BackSpace
-# bindsym $mod+Shift+BackSpace	   exec --no-startup-id prompt "Reboot computer?" $reboot
+bindsym $mod+Shift+BackSpace	   exec --no-startup-id prompt "Reboot computer?" $reboot
 
 # space
 # bindsym $mod+space 			            exec --no-startup-id ~/.config/rofi/launchers/type-6/launcher.sh
@@ -215,9 +234,15 @@ bindsym $mod+F1		        restart
 bindsym $mod+F2		        exec --no-startup-id screenkey -s small --scr 1 -p fixed -g 600x100+2573+1330 --opacity .9 --font-color white
 bindsym $mod+F3	          exec --no-startup-id killall screenkey
 bindsym $mod+F12	        exec $term -e nmtui
+# Audio
 bindsym $mod+F7                 exec playerctl play-pause
 bindsym $mod+F6                 exec playerctl next
 bindsym $mod+F5                 exec playerctl previous
+bindsym $mode+F9                exec playerctl volume 0.1-
+bindsym $mode+F10               exec playerctl volume 0.1+
+
+
+
 
 
 # #---Arrow Keys---# #
@@ -247,11 +272,13 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
-# My Addons
-exec --no-startup-id feh --bg-scale /home/qubi/Pictures/Wallpapers/gray.png
-exec --no-startup-id xrandr --output DP-1-2 --mode 2560x1440 --rate 170.02
-exec --no-startup-id xrandr --output DP-1-2 --auto --right-of eDP-1
+# Autostart
+exec --no-startup-id feh --randomize --bg-scale /home/qubi/Pictures/Wallpapers/
+exec_always --no-startup-id xrandr --output DP-1-2 --mode 2560x1440 --rate 170.02
+exec_always --no-startup-id xrandr --output DP-1-2 --auto --right-of eDP-1
 # exec --no-startup-id compton
 exec_always --no-startup-id xinput set-prop "SYNA2B46:00 06CB:CD5F Touchpad" "libinput Tapping Enabled" 1
 exec_always --no-startup-id xinput set-prop "SYNA2B46:00 06CB:CD5F Touchpad" "libinput Natural Scrolling Enabled" 1
 exec_always --no-startup-id xinput set-prop "SYNA2B46:00 06CB:CD5F Touchpad" "libinput Tapping Button Mapping Enabled" 1 3 2
+exec --no-startup-id conky -c /home/qubi/.conky/Regulus/Regulus.conf
+exec --no-startup-id picom --config /home/qubi/.config/picom/picom.conf
