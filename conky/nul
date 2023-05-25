@@ -1,0 +1,19 @@
+
+7-Zip (a) [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,12 CPUs Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz (906EA),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 228673 bytes (224 KiB)
+
+Extracting archive: /home/qubi/Downloads/Regulus-Dark-PlayerctlC-v2.0.zip
+--
+Path = /home/qubi/Downloads/Regulus-Dark-PlayerctlC-v2.0.zip
+Type = zip
+Physical Size = 228673
+
+Everything is Ok
+
+Folders: 5
+Files: 19
+Size:       406170
+Compressed: 228673
