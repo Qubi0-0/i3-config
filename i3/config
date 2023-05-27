@@ -74,8 +74,10 @@ bindsym $mod+Shift+q		        [con_id="__focused__" instance="^(?!dropdown_).*$"
 bindsym $mod+w 			            exec --no-startup-id opera
 
 # c
-bindsym $mod+Shift+c                exec --no-startup-id i3lock-fancy
-# bindsym $mod+Shift+c		        exec --no-startup-id $suspend
+bindsym $mod+c                      exec --no-startup-id i3lock-fancy
+bindsym $mod+Shift+c		        exec --no-startup-id $suspend 
+# , mode "default"
+bindsym $mod+Ctrl+Shift+c           exec --no-startup-id $hibernate
 
 # e
 bindsym $mod+e 			            exec --no-startup-id code-insiders -n
@@ -124,22 +126,22 @@ bindsym $mod+Shift+g		        gaps inner current set 0; gaps outer current set 0
 # h
 bindsym $mod+h			            focus left
 bindsym $mod+Shift+h		        move left 30
-bindsym $mod+Ctrl+h		          move workspace to output left
+# bindsym $mod+Ctrl+h		          move workspace to output left
 
 # j
 bindsym $mod+j			            focus down
 bindsym $mod+Shift+j		        move down 30
-bindsym $mod+Ctrl+j		          move workspace to output down
+# bindsym $mod+Ctrl+j		          move workspace to output down
 
 # k
 bindsym $mod+k			            focus up
 bindsym $mod+Shift+k		        move up 30
-bindsym $mod+Ctrl+k		          move workspace to output up
+# bindsym $mod+Ctrl+k		          move workspace to output up
 
 # l
 bindsym $mod+l			            focus right
 bindsym $mod+Shift+l		        move right 30
-bindsym $mod+Ctrl+l		          move workspace to output right
+# bindsym $mod+Ctrl+l		          move workspace to output right
 
 bindsym $mod+semicolon 			    exec --no-startup-id skippy-xd
 
@@ -161,7 +163,7 @@ bindsym $mod+v			            split v
 bindsym $mod+b			            split h 
 
 # n
-bindsym $mod+n			            exec --no-startup-id brave
+bindsym $mod+n			            exec --no-startup-id brave33
 bindsym $mod+Shift+n			    exec i3 exit
 
 # m
@@ -224,7 +226,7 @@ bindsym $mod+Shift+9	move container to workspace $ws9
 bindsym $mod+Shift+0	move container to workspace $ws10
 
 for_window [title="GIMP Startup"] move workspace $ws5
-for_window [class="Gimp"] move workspace $ws5
+for_window [class="Franz"] move workspace $ws8
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
 
