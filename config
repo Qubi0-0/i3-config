@@ -88,7 +88,7 @@ bindsym $mod+e 			            exec --no-startup-id code-insiders -n
 bindsym $mod+Shift+e		        exec $term -e code-insiders
 
 # r
-bindsym $mod+r 			            exec --no-startup-id i3-sensible-terminal
+# bindsym $mod+r 			            exec --no-startup-id i3-sensible-terminal
 bindsym $mod+Shift+r		        exec --no-startup-id winresize
 
 # t
@@ -106,7 +106,7 @@ bindsym $mod+u                  [urgent=latest] focus
 bindsym $mod+i                  fullscreen disable; floating enable; resize set 300 200; sticky enable; move position 4792 53
 
 # o
-bindsym $mod+o			            exec --no-startup-id franz
+bindsym $mod+o			            exec --no-startup-id /home/qubi/programs/Caprine-2.57.4.AppImage
 # bindsym $mod+Shift			        exec --no-startup-id $term -e nvim ~/Repos
 
 # a
@@ -150,7 +150,7 @@ bindsym $mod+Shift+l		        move right 30
 bindsym $mod+semicolon 			    exec --no-startup-id skippy-xd
 
 # z
-bindsym $mod+z			            exec --no-startup-id $term -e nvim ~/.zshrc
+bindsym $mod+z			            exec --no-startup-id brave-browser
 
 # x
 bindsym $mod+x 			            exec --no-startup-id $reboot
@@ -167,8 +167,8 @@ bindsym $mod+v			            split v
 bindsym $mod+b			            split h 
 
 # n
-bindsym $mod+n			            exec --no-startup-id brave33
-bindsym $mod+Shift+n			    exec i3 exit
+# bindsym $mod+n			            exec --no-startup-id brave33
+bindsym $mod+Ctrl+Shift+n			    exec i3 exit
 
 # m
 bindsym $mod+m		              exec --no-startup-id spotify
@@ -231,7 +231,7 @@ bindsym $mod+Shift+9	move container to workspace $ws9
 bindsym $mod+Shift+0	move container to workspace $ws10
 
 for_window [title="GIMP Startup"] move workspace $ws5
-for_window [class="Franz"] move workspace $ws8
+for_window [class="Caprine"] move workspace $ws8
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
 
