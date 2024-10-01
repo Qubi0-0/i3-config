@@ -9,6 +9,7 @@ bar {
 	status_command i3status
     tray_padding 1
     strip_workspace_numbers yes
+    
 
     colors {
             separator  #1f222d
@@ -23,6 +24,10 @@ bar {
             binding_mode       #1f222d #81a1c1    #2e3440
                  }
 }
+
+
+
+
 
 
 
@@ -84,8 +89,8 @@ bindsym $mod+Shift+c		        exec --no-startup-id $suspend
 bindsym $mod+Ctrl+Shift+c           exec --no-startup-id $hibernate
 
 # e
-bindsym $mod+e 			            exec --no-startup-id code-insiders -n
-bindsym $mod+Shift+e		        exec $term -e code-insiders
+bindsym $mod+e 			            exec --no-startup-id /home/qubi/programs/Flameshot-12.1.0.x86_64.AppImage
+# bindsym $mod+Shift+e		        exec $term -e code-insiders
 
 # r
 # bindsym $mod+r 			            exec --no-startup-id i3-sensible-terminal
@@ -97,7 +102,7 @@ bindsym $mod+Shift+t            focus mode_toggle
 
 # y
 # bindsym $mod+y			            exec --no-startup-id flameshot gui -p ~/Pictures/screenshots
-bindsym $mod+Shift+y		        exec --no-startup-id flameshot full -p ~/Pictures/screenshots
+# bindsym $mod+Shift+e		        exec --no-startup-id /home/qubi/programs/Flameshot-12.1.0.x86_64.AppImage
 
 # u
 bindsym $mod+u                  [urgent=latest] focus
@@ -167,14 +172,14 @@ bindsym $mod+v			            split v
 bindsym $mod+b			            split h 
 
 # n
-# bindsym $mod+n			            exec --no-startup-id brave33
+# bindsym $mod+n			            exec --no-startup-id 
 bindsym $mod+Ctrl+Shift+n			    exec i3 exit
 
 # m
 bindsym $mod+m		              exec --no-startup-id spotify
 bindsym $mod+Shift+m		        exec --no-startup-id discord
-# y
-bindsym $mod+y                  exec --no-startup-id xrandr --output DP-1-2 --mode 2560x1440 --rate 170.02
+# r 
+bindsym $mod+r                  exec --no-startup-id xrandr --output DP-1-2 --mode 2560x1440 --rate 170.02
 
 # #---Workspace Bindings---# #
 # bindsym $mod+Tab		            exec --no-startup-id rofi-menu-windows
@@ -198,7 +203,7 @@ set $ws10 "10"
 
 # Assign Workspaces:
 # assign [class="Brave"] $ws1
-# assign [class="Opera"] $ws3
+assign [class="QGroundControl"] $ws6
 assign [class="discord"] $ws8
 assign [class="Code"] $ws3
 
@@ -229,6 +234,8 @@ bindsym $mod+Shift+8	move container to workspace $ws8
 bindsym $mod+Shift+9	move container to workspace $ws9
 bindsym $mod+Shift+0	move container to workspace $ws10
 
+# for_window [class="Rviz"] move to workspace $ws2
+# for_window [class="gazebo"] move to workspace $ws2
 for_window [class="Spotify"] move to workspace $ws10
 for_window [title="GIMP Startup"] move workspace $ws5
 for_window [class="Caprine"] move workspace $ws9
@@ -281,11 +288,13 @@ client.background       #ffffff
 
 # Autostart
 exec_always --no-startup-id feh --randomize --bg-scale /home/qubi/Pictures/Wallpapers/nord/
-exec_always --no-startup-id xrandr --output DP-1-2 --mode 2560x1440 --rate 170.02
 exec_always --no-startup-id xrandr --output DP-1-2 --auto --right-of eDP-1
-# exec --no-startup-id compton
+
 exec_always --no-startup-id xinput set-prop "SYNA2B46:00 06CB:CD5F Touchpad" "libinput Tapping Enabled" 1
 exec_always --no-startup-id xinput set-prop "SYNA2B46:00 06CB:CD5F Touchpad" "libinput Natural Scrolling Enabled" 1
 exec_always --no-startup-id xinput set-prop "SYNA2B46:00 06CB:CD5F Touchpad" "libinput Tapping Button Mapping Enabled" 1 3 2
 exec_always --no-startup-id conky -c /home/qubi/.conky/Regulus/Regulus.conf
 exec --no-startup-id picom --config /home/qubi/.config/picom/picom.conf
+exec_always --no-startup-id xrandr --output DP-1-2 --mode 2560x1440 --rate 170.02
+exec --no-startup-id /home/qubi/programs/Caprine-2.57.4.AppImage
+# exec --no-startup-id discord
