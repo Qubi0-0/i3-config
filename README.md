@@ -22,4 +22,5 @@ sudo ./create_desktop_app.sh [path_to_application] [application_name]
 
 - `path_to_application` means the path to the binary file
 - `application_name` is the name you want to refer to that app with
+
   It has to be run with `sudo` due to the permissions of the `/usr/share/applications` directory
